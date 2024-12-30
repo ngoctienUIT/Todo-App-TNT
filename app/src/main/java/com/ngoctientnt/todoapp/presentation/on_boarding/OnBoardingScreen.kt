@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ngoctientnt.todoapp.R
+import com.ngoctientnt.todoapp.core.extension.replace
+import com.ngoctientnt.todoapp.core.router.ScreenRoute
 import com.ngoctientnt.todoapp.presentation.on_boarding.component.BoardingComponent
 import com.ngoctientnt.todoapp.presentation.on_boarding.component.FirstBoarding
 import com.ngoctientnt.todoapp.ui.theme.TodoAppTheme
@@ -83,7 +85,7 @@ fun OnBoardingScreen(navController: NavHostController) {
                 Spacer(modifier = Modifier.weight(1f))
             if (pagerState.currentPage != 0)
                 Button(
-                    onClick = {},
+                    onClick = { navController.replace(ScreenRoute.Welcome.route) },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(R.color.lightSeaGreen)
                     ),

@@ -4,6 +4,7 @@ enum class Screen {
     ONBOARDING,
     SIGNIN,
     SIGNUP,
+    WELCOME,
     HOMEINTRO,
 }
 
@@ -12,4 +13,5 @@ sealed class ScreenRoute(val route: String) {
     data object SignIn : ScreenRoute(Screen.SIGNIN.name)
     data object SignUp : ScreenRoute(Screen.SIGNUP.name)
     data object HomeIntro : ScreenRoute(Screen.HOMEINTRO.name)
+    data object Welcome : ScreenRoute(Screen.WELCOME.name)
 }

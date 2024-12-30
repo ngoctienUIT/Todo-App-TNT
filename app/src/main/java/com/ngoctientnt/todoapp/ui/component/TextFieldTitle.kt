@@ -33,7 +33,6 @@ import com.ngoctientnt.todoapp.ui.theme.TodoAppTheme
 fun TextFieldTitle(
     title: String,
     value: String,
-    modifier: Modifier = Modifier,
     error: String? = null,
     onValueChange: (String) -> Unit,
     placeholder: String? = null,
@@ -48,7 +47,7 @@ fun TextFieldTitle(
         Spacer(modifier = Modifier.height(6.dp))
         OutlinedTextField(
             value = value,
-            onValueChange = onValueChange,
+            onValueChange = { onValueChange(it) },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(6.dp),
             placeholder = if (placeholder != null) {
